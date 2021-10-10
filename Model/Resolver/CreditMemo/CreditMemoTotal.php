@@ -106,7 +106,7 @@ class CreditMemoTotal implements ResolverInterface
                 )
             ],
             'adjustment' => [
-                'value' =>  abs((float) $creditMemo->getAdjustment()),
+                'value' =>  abs($creditMemo->getAdjustment()),
                 'currency' => $currency
             ]
         ];
@@ -132,7 +132,7 @@ class CreditMemoTotal implements ResolverInterface
         if ($calculatedCreditmemoShippingDiscount != 0) {
             $shippingDiscounts[] = [
                 'amount' => [
-                    'value' => sprintf('%.2f', abs((float) $calculatedCreditmemoShippingDiscount)),
+                    'value' => sprintf('%.2f', abs($calculatedCreditmemoShippingDiscount)),
                     'currency' => $creditmemoModel->getOrderCurrencyCode()
                 ]
             ];
@@ -153,7 +153,7 @@ class CreditMemoTotal implements ResolverInterface
             $discounts[] = [
                 'label' => $creditmemo->getDiscountDescription() ?? __('Discount'),
                 'amount' => [
-                    'value' => abs((float) $creditmemo->getDiscountAmount()),
+                    'value' => abs($creditmemo->getDiscountAmount()),
                     'currency' => $creditmemo->getOrderCurrencyCode()
                 ]
             ];

@@ -123,7 +123,7 @@ class OrderTotal implements ResolverInterface
             $orderDiscounts[] = [
                 'label' => $order->getDiscountDescription() ?? __('Discount'),
                 'amount' => [
-                    'value' => abs((float) $order->getDiscountAmount()),
+                    'value' => abs($order->getDiscountAmount()),
                     'currency' => $order->getOrderCurrencyCode()
                 ]
             ];
@@ -196,7 +196,7 @@ class OrderTotal implements ResolverInterface
                 [
                     'label' => $order->getDiscountDescription() ?? __('Discount'),
                     'amount' => [
-                        'value' => abs((float) $order->getShippingDiscountAmount()),
+                        'value' => abs($order->getShippingDiscountAmount()),
                         'currency' => $order->getOrderCurrencyCode()
                     ]
                 ];

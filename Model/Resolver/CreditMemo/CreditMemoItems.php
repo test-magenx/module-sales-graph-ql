@@ -146,9 +146,9 @@ class CreditMemoItems implements ResolverInterface
             $discounts = [];
         } else {
             $discounts[] = [
-                'label' => $associatedOrder->getDiscountDescription() ?? __('Discount'),
+                'label' => $associatedOrder->getDiscountDescription() ?? _('Discount'),
                 'amount' => [
-                    'value' => abs((float) $creditmemoItem->getDiscountAmount()),
+                    'value' => abs($creditmemoItem->getDiscountAmount()) ?? 0,
                     'currency' => $associatedOrder->getOrderCurrencyCode()
                 ]
             ];

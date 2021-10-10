@@ -150,7 +150,7 @@ class InvoiceTotal implements ResolverInterface
             $discounts[] = [
                 'label' => $invoice->getDiscountDescription() ?? __('Discount'),
                 'amount' => [
-                    'value' => abs((float) $invoice->getDiscountAmount()),
+                    'value' => abs($invoice->getDiscountAmount()),
                     'currency' => $invoice->getOrderCurrencyCode()
                 ]
             ];
